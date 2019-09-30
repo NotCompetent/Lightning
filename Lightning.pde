@@ -8,11 +8,11 @@ void setup()
 {
   size(300,300);
   strokeWeight(0);
-  background();
+  background(255);
 }
 void draw()
 {
-	while(endX<150){
+	while(endX<300){
 		endX = startX + (int)(Math.random()*9);
 		endY = startY + (int)(Math.random()*18);
 		if(endY > 9){
