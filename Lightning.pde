@@ -1,22 +1,24 @@
 //Phone drop simulator
 // restart = 
-int startX = 0;
-int startY = 150;
-int endX = 0;
-int endY 150;
+int startX = 50;
+int startY = 200;
+int endX = 50;
+int endY = 200;
 void setup()
 {
-  size(300,300);
-  strokeWeight(0);
-  background(255);
+  size(300,500);
+  strokeWeight(1);
+  background(0);
+  stroke(255);
 }
 void draw()
 {
-	while(endX<300){
+	startY = (int)(Math.random()*300);
+	while(endX<250){
 		endX = startX + (int)(Math.random()*9);
 		endY = startY + (int)(Math.random()*18);
 		if(endY > 9){
-			endY = endY - 18;
+			endY = endY - 9;
 		}
 		line(startX, startY, endX, endY);
 		startX = endX;
@@ -26,9 +28,9 @@ void draw()
 }
 void mousePressed()
 {
-	startX = 0;
+	startX = 50;
 	startY = 150;
-	endX = 0;
-	endY 150;
+	endX = 50;
+	endY = 150;
 }
 
