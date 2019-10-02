@@ -3,6 +3,7 @@ int startX = 0;
 int startY = 250;
 int endX = 0;
 int endY = 250;
+
 void setup()
 {
   size(300,500);
@@ -11,29 +12,14 @@ void setup()
   stroke(255);
   drawPhone();
 }
-void draw()
-{
-	
-	stroke(255,255,255);
-	startY = (int)(Math.random()*400+50);
-	while(endX<275){
-		endX = startX + (int)(Math.random()*9);
-		endY = startY + (int)(Math.random()*18);
-		if(endY > 9){
-			endY = endY - 9;
-		}
-		line(startX, startY, endX, endY);
-		startX = endX;
-		startY = endY;
-	}
 
-}
 void mousePressed()
 {
 	startX = 0;
 	startY = 250;
 	endX = 0;
 	endY = 250;
+	crack();
 }
 
 void drawPhone()
@@ -65,3 +51,18 @@ void drawPhone()
 		rect(25,50,250,400);
 }
 
+void crack(){
+	stroke(255,255,255);
+	startY = (int)(Math.random()*400+50);
+	while(endX<275){
+		endX = startX + (int)(Math.random()*9);
+		endY = startY + (int)(Math.random()*18);
+		if(endY > 9){
+			endY = endY - 9;
+		}
+		line(startX, startY, endX, endY);
+		startX = endX;
+		startY = endY;
+	}
+
+}
